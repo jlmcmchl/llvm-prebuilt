@@ -21,7 +21,7 @@ jobs:
           - os: windows
             runner: windows-2022
           - os: macos
-            runner: macos-latest
+            runner: macos-15
           - os: ubuntu-22.04
             runner: ubuntu-22.04
           - os: ubuntu-24.04
@@ -217,6 +217,7 @@ jobs:
           $CMakeArgs += @("-DWITH_DOCS=OFF", "-DWITH_UTILS=OFF")
           $CMakeArgs += @("-DWITH_PYTHON_BINDINGS=OFF")
           $CMakeArgs += @("-DWITH_SERIALIZATION=OFF")
+          $CMakeArgs += @("-DWITH_AUTOSCHEDULERS=OFF")
           $CMakeArgs += @("-DTARGET_WEBASSEMBLY=ON")
           $CMakeArgs += @("-Wno-dev")
 
