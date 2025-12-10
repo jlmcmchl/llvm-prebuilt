@@ -50,7 +50,7 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew install ninja
-          echo "MACOSX_DEPLOYMENT_TARGET=10.13" >> $GITHUB_ENV
+          echo "MACOSX_DEPLOYMENT_TARGET=10.15" >> $GITHUB_ENV
 
       - name: Configure Linux runner
         if: runner.os == 'Linux'
