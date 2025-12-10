@@ -165,8 +165,8 @@ jobs:
         run: |
           if ('${{matrix.version}}' -eq '21.0.0') {
             git -C halide apply ../llvm-prebuilt/patches/halide-21-add-halide-host-tools-dir-cmake-option.patch
-            git -C halide apply ../llvm-prebuilt/patches/halide-21-disable-autoschedulers.patch
-            git -C halide apply ../llvm-prebuilt/patches/halide-21-disable-clang-verbose-build-warnings.patch
+            # git -C halide apply ../llvm-prebuilt/patches/halide-21-disable-autoschedulers.patch
+            # git -C halide apply ../llvm-prebuilt/patches/halide-21-disable-clang-verbose-build-warnings.patch
           }
 
       - name: Build Halide host tools
