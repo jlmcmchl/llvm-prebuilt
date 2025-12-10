@@ -9,13 +9,11 @@ jobs:
       matrix:
         arch: [ x86_64, aarch64 ]
         os: [ windows, macos, ubuntu-22.04, ubuntu-24.04 ]
-        version: [ 16.0.6, 18.1.8 ]
+        version: [ 20.1.7 ]
 
         include:
-          - version: 16.0.6
-            branch: release/16.x
-          - version: 18.1.8
-            branch: release/18.x
+          - version: 20.1.7
+            branch: release/20.x
 
           - os: windows
             runner: windows-2022
@@ -122,14 +120,10 @@ jobs:
       - name: Patch LLVM
         shell: pwsh
         run: |
-          if ('${{matrix.version}}' -eq '16.0.6') {
-            git -C llvm-project apply ../llvm-prebuilt/patches/llvm-16-add-lld-install-targets.patch
-            git -C llvm-project apply ../llvm-prebuilt/patches/llvm-16-add-llvm-name-prefix-to-llc-lli-opt-tools.patch
-            git -C llvm-project apply ../llvm-prebuilt/patches/llvm-16-force-disable-clang-ast-introspection.patch
-          } elseif ('${{matrix.version}}' -eq '18.1.8') {
-            git -C llvm-project apply ../llvm-prebuilt/patches/llvm-18-add-lld-install-targets.patch
-            git -C llvm-project apply ../llvm-prebuilt/patches/llvm-18-add-llvm-name-prefix-to-llc-lli-opt-tools.patch
-            git -C llvm-project apply ../llvm-prebuilt/patches/llvm-18-force-disable-clang-ast-introspection.patch
+          if ('${{matrix.version}}' -eq '20.1.7') {
+            git -C llvm-project apply ../llvm-prebuilt/patches/llvm-20-add-lld-install-targets.patch
+            git -C llvm-project apply ../llvm-prebuilt/patches/llvm-20-add-llvm-name-prefix-to-llc-lli-opt-tools.patch
+            git -C llvm-project apply ../llvm-prebuilt/patches/llvm-20-force-disable-clang-ast-introspection.patch
           }
 
       - name: Enable Windows host environment
