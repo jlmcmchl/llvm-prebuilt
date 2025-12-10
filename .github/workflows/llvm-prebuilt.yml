@@ -123,7 +123,6 @@ jobs:
           if ('${{matrix.version}}' -eq '20.1.7') {
             git -C llvm-project apply ../llvm-prebuilt/patches/llvm-20-add-lld-install-targets.patch
             git -C llvm-project apply ../llvm-prebuilt/patches/llvm-20-add-llvm-name-prefix-to-llc-lli-opt-tools.patch
-            git -C llvm-project apply ../llvm-prebuilt/patches/llvm-20-force-disable-clang-ast-introspection.patch
           }
 
       - name: Enable Windows host environment
